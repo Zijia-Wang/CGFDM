@@ -1,0 +1,166 @@
+Generating SQLite file dynfd_profile10.sqlite from dynfd_profile10.qdrep
+Using dynfd_profile10.sqlite for SQL queries.
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/cudaapisum.py dynfd_profile10.sqlite]... 
+
+ Time(%)  Total Time (ns)  Num Calls   Average (ns)    Minimum (ns)   Maximum (ns)    StdDev (ns)           Name         
+ -------  ---------------  ---------  ---------------  -------------  -------------  -------------  ---------------------
+    68.9   44,238,746,110    291,472        151,777.0          2,350      5,090,492      581,110.4  cudaDeviceSynchronize
+    15.7   10,076,465,343          8  1,259,558,167.9  1,257,592,390  1,261,505,671    1,448,044.8  cudaMemcpyToSymbol   
+     4.4    2,819,916,247      1,432      1,969,215.3          5,570      8,331,703    2,240,860.5  cudaMalloc           
+     3.8    2,424,053,427    392,356          6,178.2          4,710     11,626,174       49,221.9  cudaLaunchKernel     
+     2.6    1,657,879,439         16    103,617,464.9        272,860    260,229,969  115,623,920.8  cuMemHostRegister_v2 
+     2.0    1,268,520,487  2,378,650            533.3            380      2,931,321        2,102.9  cuEventQuery         
+     1.2      765,572,573      1,016        753,516.3         14,460     32,468,302    2,639,045.7  cudaMemcpy           
+     0.8      488,775,692     80,270          6,089.1          3,800        317,890        3,663.0  cuMemcpyAsync        
+     0.2      146,733,246         72      2,037,961.8          8,210      5,680,092    1,920,163.4  cudaFree             
+     0.1       89,958,302         40      2,248,957.6      1,097,441      4,010,251      883,512.9  cuIpcCloseMemHandle  
+     0.1       59,366,774         40      1,484,169.4        574,780      2,611,771      549,126.6  cuIpcOpenMemHandle   
+     0.1       58,814,665     79,830            736.7            480         86,740          653.6  cuEventRecord        
+     0.0       19,560,028         16      1,222,501.8        920,141      1,576,540      269,236.4  cudaMallocHost       
+     0.0       16,020,385         16      1,001,274.1        469,621      2,744,901      590,772.0  cudaFreeHost         
+     0.0       13,416,834     10,112          1,326.8            310      1,798,221       31,954.5  cuEventCreate        
+     0.0       12,241,619        440         27,821.9         11,930        167,070       21,128.9  cuStreamSynchronize  
+     0.0        6,637,195         32        207,412.3          1,420      1,214,461      394,886.7  cuStreamCreate       
+     0.0        6,405,710          8        800,713.8        126,370      1,529,830      694,930.8  cuMemHostUnregister  
+     0.0        4,915,442     10,112            486.1            240         29,120          600.2  cuEventDestroy_v2    
+     0.0        3,515,180        224         15,692.8          6,350        102,020       14,555.0  cudaMemset           
+     0.0          352,720         32         11,022.5          5,410         28,770        7,162.2  cuStreamDestroy_v2   
+     0.0          125,310          8         15,663.8          9,150         42,960       11,126.0  cudaEventRecord      
+     0.0           99,350         16          6,209.4          1,060         20,070        5,821.2  cudaEventCreate      
+     0.0           42,170         16          2,635.6            890          5,220        1,576.4  cudaEventDestroy     
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/gpukernsum.py dynfd_profile10.sqlite]... 
+
+ Time(%)  Total Time (ns)  Instances  Average (ns)  Minimum (ns)  Maximum (ns)  StdDev (ns)                                  Name                                
+ -------  ---------------  ---------  ------------  ------------  ------------  -----------  --------------------------------------------------------------------
+    44.8      626,502,323        516   1,214,151.8     1,207,926     1,218,902      2,736.0  wave_deriv_cu(Wave, float *, PML, int, int, int)                    
+    25.0      349,365,567        516     677,065.1       596,091       709,338     46,331.3  wave_rk_cu(Wave, PML, int)                                          
+    10.5      146,693,822      1,032     142,145.2       136,479       146,527      1,530.4  abs_deriv_x_cu(Wave, float *, PML, int, int)                        
+     4.0       55,430,671        516     107,423.8       102,559       111,679      1,503.2  fault_dvelo_cu(Wave, Fault, float *, int, int, int, int, int)       
+     2.4       34,147,761      1,546      22,087.8         6,304        31,584     10,876.9  unpack(float *, float *, int, int, int)                             
+     2.3       32,465,829        258     125,836.5       120,287       130,751      1,609.2  fault_dstrs_b_cu(Wave, Fault, float *, int, int, int, int, int)     
+     2.3       32,029,221        258     124,144.3       120,543       186,015      4,135.7  fault_dstrs_f_cu(Wave, Fault, float *, int, int, int, int, int)     
+     2.1       29,655,803      1,545      19,194.7        11,008        25,759      5,384.2  pack(float *, float *, int, int, int)                               
+     1.5       20,292,374        516      39,326.3        38,111        41,248        740.0  trial_sw_cu(Wave, Fault, float *, int, int, int, int, int, int, int)
+     1.3       17,895,087        516      34,680.4        21,279        41,696      7,419.0  fault_rk_cu(Fault, int, int)                                        
+     1.0       14,172,881      1,032      13,733.4        12,672        14,975        385.9  pack_y(float *, Fault, int, int)                                    
+     0.9       12,442,169      1,032      12,056.4        10,560        14,432        803.6  fault2wave_cu(Wave, Fault, float *, int, int)                       
+     0.6        8,189,304      1,032       7,935.4         7,584         8,608        178.5  unpack_y(Fault, float *, int, int)                                  
+     0.4        5,959,290        516      11,549.0        10,944        12,480        272.3  pack_z(float *, Fault, int, int)                                    
+     0.3        4,813,466        516       9,328.4         7,616        10,688        767.1  state_rk_cu(Fault, int, int)                                        
+     0.3        3,735,395        516       7,239.1         7,040         7,648        131.0  unpack_z(Fault, float *, int, int)                                  
+     0.2        3,472,773        516       6,730.2         6,208         7,520        261.3  fault_rk_stage2_cu(Fault, int, int)                                 
+     0.0          569,116        128       4,446.2         4,160         4,864        120.1  cal_rup_sensor_magn_cu(Fault, int, int *)                           
+     0.0          568,130        516       1,101.0         1,023         1,312         61.8  wave2fault_cu(Wave, Fault, float *, int, int)                       
+     0.0          552,316        128       4,315.0         4,160         4,640        101.7  cal_rup_sensor_D_cu(Fault, int, int *)                              
+     0.0          127,039         12      10,586.6        10,399        11,008        188.6  pack_fault(Fault, float *, int, int)                                
+     0.0           91,712         12       7,642.7         7,488         7,872        134.3  get_wave_slice_y(float *, long, int, float *)                       
+     0.0           76,000         12       6,333.3         3,776        11,744      3,591.6  get_wave_slice_z(float *, long, int, float *)                       
+     0.0           54,720         12       4,560.0         4,384         4,768        120.9  get_wave_slice_x(float *, long, int, float *)                       
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/gpumemtimesum.py dynfd_profile10.sqlite]... 
+
+ Time(%)  Total Time (ns)  Count  Average (ns)  Minimum (ns)  Maximum (ns)  StdDev (ns)      Operation     
+ -------  ---------------  -----  ------------  ------------  ------------  -----------  ------------------
+    69.5       37,762,833  3,094      12,205.2         2,559        56,639     12,374.4  [CUDA memcpy PtoP]
+    29.4       15,986,981     24     666,124.2        51,199     1,235,063    428,545.7  [CUDA memcpy DtoH]
+     1.0          542,013     25      21,680.5         2,015       100,832     35,041.3  [CUDA memset]     
+     0.0           25,632     10       2,563.2         2,368         2,976        224.7  [CUDA memcpy HtoD]
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/gpumemsizesum.py dynfd_profile10.sqlite]... 
+
+ Total (MB)  Count  Average (MB)  Minimum (MB)  Maximum (MB)  StdDev (MB)      Operation     
+ ----------  -----  ------------  ------------  ------------  -----------  ------------------
+  4,414.181  3,094         1.427         0.052         2.803        1.376  [CUDA memcpy PtoP]
+    951.111     25        38.044         0.160       192.490       69.175  [CUDA memset]     
+     43.392     24         1.808         1.056         2.560        0.768  [CUDA memcpy DtoH]
+      0.007     10         0.001         0.000         0.001        0.000  [CUDA memcpy HtoD]
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/osrtsum.py dynfd_profile10.sqlite]... 
+
+ Time(%)  Total Time (ns)  Num Calls   Average (ns)    Minimum (ns)   Maximum (ns)     StdDev (ns)             Name         
+ -------  ---------------  ---------  ---------------  ------------  --------------  ---------------  ----------------------
+    52.5  283,596,324,389      5,669     50,025,811.3         1,000  16,950,692,246    630,254,271.6  poll                  
+    28.3  152,627,481,375        534    285,819,253.5         1,000  16,420,698,143  2,113,377,951.8  epoll_wait            
+     7.1   38,426,196,188         18  2,134,788,677.1     8,915,864  19,213,649,639  4,358,751,100.6  select                
+     5.4   29,345,214,627        267    109,907,170.9         1,150   3,616,415,759    495,901,241.7  open                  
+     4.2   22,916,256,219     16,048      1,427,982.1         1,000     249,090,615      6,482,536.6  ioctl                 
+     0.8    4,351,399,371     23,073        188,592.7         1,000     789,124,251      7,461,680.1  read                  
+     0.7    3,881,483,281     21,204        183,054.3         1,000     498,754,160      6,381,632.3  write                 
+     0.3    1,690,781,076        124     13,635,331.3         1,010     655,089,420     80,041,718.0  pthread_join          
+     0.3    1,678,836,870     10,757        156,069.2       106,830         776,600         10,853.6  usleep                
+     0.1      402,354,052        840        478,992.9         1,870      38,229,504      1,717,564.2  open64                
+     0.0      245,034,285        264        928,160.2        13,590      38,534,265      5,608,446.1  pthread_cond_wait     
+     0.0      216,113,882         74      2,920,457.9         1,140      49,464,079      8,714,848.2  fread                 
+     0.0      196,045,516        545        359,716.5         1,020      24,864,500      2,628,160.9  fopen                 
+     0.0      145,474,594        851        170,945.5        69,040         324,960         33,888.8  pthread_create        
+     0.0       19,940,704      3,616          5,514.6         2,870         197,520          5,341.7  openat                
+     0.0       17,860,818        960         18,605.0         1,550          53,630          4,806.8  fgets                 
+     0.0        6,715,292         58        115,780.9         3,010         304,410         70,461.0  pthread_rwlock_wrlock 
+     0.0        4,156,551        417          9,967.7         1,100         147,710         11,544.7  fclose                
+     0.0        4,082,542          8        510,317.8       454,070         678,051         73,820.9  fork                  
+     0.0        3,328,971        169         19,698.1         1,140          92,730         11,836.6  writev                
+     0.0        3,020,900        407          7,422.4         1,000         111,560         13,303.1  fgetc                 
+     0.0        2,412,131         80         30,151.6        13,350         118,390         14,132.0  sem_timedwait         
+     0.0        2,290,340        291          7,870.6         2,130          82,260          9,854.0  mprotect              
+     0.0        2,285,322        196         11,659.8         2,100          43,510         10,809.7  mmap                  
+     0.0        1,907,220         71         26,862.3         1,500         755,950        112,066.1  munmap                
+     0.0        1,789,410         39         45,882.3         1,050         705,770        122,376.6  recv                  
+     0.0          948,951         16         59,309.4         6,060         125,910         54,659.3  connect               
+     0.0          748,500         13         57,576.9         1,340         114,240         47,173.1  waitpid               
+     0.0          730,240        264          2,766.1         1,970          15,830          1,046.7  pthread_cond_broadcast
+     0.0          441,481         26         16,980.0         3,370          43,510         11,224.1  shutdown              
+     0.0          404,090         24         16,837.1         1,340          77,640         16,981.3  send                  
+     0.0          353,330         71          4,976.5         1,010          13,420          3,088.0  socket                
+     0.0          283,180        127          2,229.8         1,000          28,990          2,548.1  epoll_ctl             
+     0.0          282,930         22         12,860.5         1,100          37,740         11,092.2  pthread_mutex_lock    
+     0.0          227,110        169          1,343.8         1,000           9,340            739.4  fcntl                 
+     0.0          201,220         19         10,590.5         1,380         135,450         30,278.2  ftruncate             
+     0.0          168,440          6         28,073.3        16,970          46,860         11,412.4  posix_fallocate       
+     0.0          168,260         26          6,471.5         4,270          11,130          1,733.5  socketpair            
+     0.0           81,270          9          9,030.0         6,630          13,120          1,942.0  shmdt                 
+     0.0           77,830          9          8,647.8         5,650          10,580          1,462.2  shmget                
+     0.0           76,040         16          4,752.5         2,670           7,150          1,326.2  accept                
+     0.0           71,930         20          3,596.5         1,240           6,760          1,867.7  pipe                  
+     0.0           71,900          8          8,987.5         5,970          12,350          2,101.9  pipe2                 
+     0.0           68,100          9          7,566.7         5,160          10,750          1,693.8  shmat                 
+     0.0           55,810         18          3,100.6         1,120           5,850          1,601.8  sigaction             
+     0.0           54,950         22          2,497.7         1,330           6,140          1,320.4  bind                  
+     0.0           52,100         10          5,210.0         3,770           7,210          1,214.1  listen                
+     0.0           22,690          1         22,690.0        22,690          22,690              0.0  fgets_unlocked        
+     0.0           20,680          1         20,680.0        20,680          20,680              0.0  mkfifo                
+     0.0           16,290         11          1,480.9         1,000           3,490            708.8  fflush                
+     0.0           14,630          4          3,657.5         1,010          11,320          5,109.0  shmctl                
+     0.0            1,020          1          1,020.0         1,020           1,020              0.0  pthread_mutex_trylock 
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/nvtxsum.py dynfd_profile10.sqlite]... 
+
+ Time(%)  Total Time (ns)  Instances  Average (ns)   Minimum (ns)  Maximum (ns)   StdDev (ns)    Style        Range      
+ -------  ---------------  ---------  -------------  ------------  ------------  -------------  -------  ----------------
+    90.0   22,964,365,614    159,776      143,728.5           110   654,402,540    6,393,353.5  PushPop  MPI:MPI_Sendrecv
+     7.0    1,786,054,544          8  223,256,818.0    24,839,010   507,540,714  192,222,457.3  PushPop  MPI:MPI_Init    
+     1.9      475,793,692          8   59,474,211.5    51,894,180    79,433,880    8,733,400.6  PushPop  MPI:MPI_Finalize
+     1.1      284,344,095         64    4,442,876.5         8,770    23,619,709    6,569,281.7  PushPop  MPI:MPI_Barrier 
+     0.0        1,512,610         64       23,634.5         3,560        93,480       24,193.4  PushPop  MPI:MPI_Reduce  
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/openmpevtsum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain OpenMP event data.
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/vulkanmarkerssum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain Vulkan Debug Extension (Vulkan Debug Util) data
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/pixsum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain DX11/DX12 CPU debug markers
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/khrdebugsum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain KHR Extension (KHR_DEBUG) data
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/khrdebuggpusum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain GPU KHR Extension (KHR_DEBUG) data
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/vulkangpumarkersum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain GPU Vulkan Debug Extension (GPU Vulkan Debug markers) data
+
+
+Running [/public/software/cuda-11.5/nsight-systems-2021.3.3/target-linux-x64/reports/dx12gpumarkersum.py dynfd_profile10.sqlite]... SKIPPED: dynfd_profile10.sqlite does not contain DX12 GPU debug markers
+
+
