@@ -85,6 +85,8 @@ typedef struct {
   real_t RupThres;
   int TP_n;
   int num_recv;
+  int p_srci, p_srcj, p_srck;   // point source for dynamic triggering 
+  real_t rickerfc;
 } Params;
 
 typedef struct {

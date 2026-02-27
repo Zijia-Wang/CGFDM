@@ -202,7 +202,7 @@ int main(int argc, char **argv){
   //int srci = hostParams.NX / 2; // fault plane index X
   for(int nfault = 0; nfault < num_fault; nfault++){
     i0 = hostParams.src_i[nfault];
-    if(i0 / ni == thisid[0]) faultnode = 1;
+    if((i0 - 3) / ni == thisid[0]) faultnode = 1; 
     // hostParams.faultnode = faultnode;
   }
 

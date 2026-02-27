@@ -217,8 +217,20 @@ void get_params(int argc, char **argv)
       if (hostParams.num_fault > 1){
         hostParams.src_i[i]--; 
       }
+      hostParams.src_i[i] = hostParams.src_i[i] + 3;  // consider ghost points
     }
   }
+
+////////////// For dynamic triggering ///////////////
+  if (item = cJSON_GetObjectItem(root, "p_srci"))
+    hostParams.p_srci = item->valueint;
+  if (item = cJSON_GetObjectItem(root, "p_srcj"))
+    hostParams.p_srcj = item->valueint;
+  if (item = cJSON_GetObjectItem(root, "p_srck"))
+    hostParams.p_srck = item->valueint;
+  if (item = cJSON_GetObjectItem(root, "rickerfc"))
+    hostParams.rickerfc  = item->valuedouble;
+/////////////////////////////////////////////////////
   // int FGsize = 4 * hostParams.num_fault;
   if (item = cJSON_GetObjectItem(root, "Fault_grid")){
   //int array_size = cJSON_GetArraySize(item);
@@ -267,6 +279,9 @@ void get_params(int argc, char **argv)
     hostParams.fw = item->valuedouble;
   if (item = cJSON_GetObjectItem(root, "RS_L"))
     hostParams.L = item->valuedouble;
+
+  if (item = cJSON_GetObjectItem(root, "alpha"))
+    hostParams.alpha_Tn = item->valuedouble;
 
   if (item = cJSON_GetObjectItem(root, "smooth_load_T"))
     hostParams.smooth_load_T = item->valuedouble;
